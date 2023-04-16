@@ -10,10 +10,6 @@
     line-height: 1.5;
 }
 
-.btn-container {
-    display: flex;
-    justify-content: center;
-}
 
 .btn {
     margin-top: 15px;

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = new express.Router();
 const feedback = require("../models/feedbackSchema");
+const dbProjects = require("../models/projectSchema");
 const nodemailer = require("nodemailer");
 
 //email config
@@ -31,13 +32,13 @@ router.post("/register", async(req, res)=> {
             const mailOptions = {
                 from: process.env.EMAIL,
                 to: email,
-                subject: "sending email using nodejs",
-                text: "Your response is submitted"
+                subject: "Thanks for your feedback",
+                text: `Thank you ${firstName} for you valuable feedback.`
             }
 
             transporter.sendMail(mailOptions, (error, info)=> {
                 if(error) {
-                    console.log(error);
+                    console.log("Error sending mail::  " + error);
                 }else {
                     console.log("Email sent successfully" + info.response);
                     res.status(201).json({status:201, message:"Email sent successfully"})
@@ -52,13 +53,13 @@ router.post("/register", async(req, res)=> {
             const mailOptions = {
                 from: process.env.EMAIL,
                 to: email,
-                subject: "sending email using nodejs",
-                text: "Your response is submitted"
+                subject: "Thanks for your feedback",
+                text: `Thank you ${firstName} for you valuable feedback.`
             }
 
             transporter.sendMail(mailOptions, (error, info)=> {
                 if(error) {
-                    console.log(error);
+                    console.log("Error sending mail::  " + error);
                 }else {
                     console.log("Email sent successfully" + info.response);
                     res.status(201).json({status:201, message:"Email sent successfully"})
@@ -71,5 +72,17 @@ router.post("/register", async(req, res)=> {
     }
 })
 
+
+//to get project details from database
+router.get("/getProjects",async(req, res)=>{
+    try {
+        const projects = await dbProjects.find();
+        res.status(201).json(projects);
+        // res.status(200).json(projects);
+        console.log(projects);
+    } catch(error) {
+        res.status(422).json(error);
+    }
+})
 
 module.exports = router;

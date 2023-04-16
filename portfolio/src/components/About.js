@@ -28,7 +28,8 @@ const About = () => {
                     <span className="skill">CSS</span> 
                     <span className="skill">JavaScript</span> 
                     <span className="skill">React</span> 
-                    <span className="skill">Angular</span> 
+                    <span className="skill">Angular</span>
+                    <span className="skill">NodeJs</span>
                 </div>
             </div>
           </div>
