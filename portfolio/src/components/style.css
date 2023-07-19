@@ -26,6 +26,8 @@
 }
 
 .p-container {
+    overflow-y: auto;
+    scroll-behavior: smooth;
     margin: auto 5%;
     width: 90%;
     height: 90%;
@@ -33,6 +35,8 @@
 
 .main-innerdiv {
     display: block;
+    height: 100vh;
+    height: 100vh;
 }
 
 .heading-container {
@@ -131,6 +135,10 @@ img.social-logo{
     background: #fff;
     box-shadow: rgb(100 100 111 / 20%) 0 7px 29px 0;
     padding: .5rem;
+}
+
+.center {
+    text-align: center;
 }
 
 @media (max-width: 800px) {

@@ -39,7 +39,7 @@ const Contact = () => {
     }else if(phone === ""){
       toast.error("Mobile Number is required");
     }else {
-      const res = await fetch("http://localhost:8000/register", {
+      const res = await fetch("https://portfoliobackend-371f.onrender.com/register", {
         method:"POST",
         headers:{
           "Content-Type":"application/json"
@@ -51,7 +51,7 @@ const Contact = () => {
       const data = await res.json();
       // console.log(data);
 
-      if(data.status == 201) {
+      if(data.status === 201) {
         toast.success("Your response submited");
         setInputValue({
           ...inputValue,
