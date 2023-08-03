@@ -6,12 +6,12 @@ const Footer = () => {
     <>
     <div className="center">
       <div className="footer-container row">
-        <div className="col-lg-6 col-sm-12">
+        <div className="col-lg-6 col-sm-12 border-sm p-2">
           <h3>Kirtesh Maskey</h3>
-          <p>Frontend developer</p>
+          <p>MERN developer</p>
         </div>
-        <div className="col-lg-6 col-sm-12">
-          <p>Conncect with me</p>
+        <div className="col-lg-6 col-sm-12 p-2">
+          <p>Connect with me</p>
           <div>
             <a href="https://www.linkedin.com/in/kirteshmaskey" rel="noreferrer" target="_blank"><img src="LinkedinLogo.png" alt="LinkedIn" class="social-logo"/></a>
             <a href="https://www.facebook.com/www.Kirteshmaske123" rel="noreferrer" target="_blank"><img src="FacebookLogo.png" alt="Facebook" class="social-logo"/></a>

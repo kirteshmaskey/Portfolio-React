@@ -1,5 +1,4 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
@@ -16,7 +15,7 @@ const Header = () => {
   return (
     <>
       <Navbar bg="light" variant="light">
-        <Container>
+        <div className="container nav-container">
           <div>
             <h2 className="mt-2 h2_right">
             <NavLink to="/" className="text-decoration-none" style={{ color: "#ff7722" }}>Kirtesh</NavLink>
@@ -33,7 +32,7 @@ const Header = () => {
               </div>
             </Nav>
           </div>
-        </Container>
+        </div>
       </Navbar>
     </>
   );

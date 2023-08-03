@@ -2,7 +2,6 @@ import React from "react";
 import "./style.css";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-// import Project from "./project-array";
 import { useState, useEffect } from "react";
 import CircularProgress from '@mui/material/CircularProgress';
 import Box from '@mui/material/Box';
@@ -40,29 +39,28 @@ const Projects = () => {
   },[])
 
   return (
-    <div className="p-container mb-4">
-      <div className="main-innerdiv">
+    <div className="p-container py-5 mb-4">
         <div className="heading-container">
           <h2>Some of my Projects</h2>
         </div>
         {
           isFetched ?
-            <div className="">
-              <div className="row d-flex justify-content-around align-items-center">
+            <div className="project-container">
+              <div className="row project-grid">
               {myProject.map((pr, index) => {
                 return (
                   <>
                     <Card style={{ width: "20rem"}} className="card-container">
-                      <Card.Img variant="top" src={pr.imgSrc} />
+                      <Card.Img variant="top" height="200px" width="30%" src={pr.imgSrc} style={{objectFit:"cover"}}/>
                       <Card.Body>
                         <Card.Title>{pr.title}</Card.Title>
                         <Card.Text>
                           {pr.desc}
                         </Card.Text>
                         <div className="btn-container">
-                          <Button variant="primary" className="project-btn">
-                            <a href={pr.link} target="_blank" rel="noreferrer" className="text-decoration-none text-light">View Project</a>
-                          </Button>
+                          <a href={pr.link} target="_blank" rel="noreferrer" className="text-decoration-none text-light">
+                            <Button variant="primary" className="project-btn">View Project</Button>
+                          </a>
                         </div>
                       </Card.Body>
                     </Card>
@@ -72,12 +70,13 @@ const Projects = () => {
               </div>
             </div>
           :
+          <div className="loader-container">
             <Box sx={{ display: 'flex', justifyContent: "center", height: "100vh" }}>
                 Loading... &nbsp;
                 <CircularProgress />
             </Box>
+          </div>
         }
-      </div>
     </div>
   );
 };
